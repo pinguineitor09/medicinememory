@@ -1,0 +1,109 @@
+body {
+   margin: 0;
+   background: #f0f8ff; /* Fondo suave azul claro */
+   font-family: 'Comic Sans MS', cursive, sans-serif;
+   overflow: hidden;
+}
+
+#wrapper {
+   height: 85vh; /* Ajustar altura para que las cartas estén más cerca de la parte superior */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; /* Centrado verticalmente */
+}
+
+#stats {
+   color: #ff6347; /* Rojo anaranjado vibrante */
+   padding: 1rem;
+   text-align: center;
+   width: calc(100% - 2rem);
+   font-size: 2.5rem;
+   font-weight: bold;
+   text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Sombra de texto para hacerlo más visible */
+   margin-bottom: 10px; /* Separar un poco del botón */
+}
+
+#resetButton {
+   background-color: #4CAF50; /* Color verde vibrante */
+   color: white;
+   padding: 10px 20px;
+   font-size: 1.2rem;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-bottom: 20px;
+   transition: background-color 0.3s;
+}
+
+#resetButton:hover {
+   background-color: #45a049; /* Color ligeramente más oscuro al pasar el mouse */
+}
+
+#game {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+   gap: 5px; /* Reducción del espacio entre cartas */
+   justify-content: center; /* Centrado horizontal */
+   align-items: center; /* Centrado vertical */
+   padding: 10px;
+}
+
+.card {
+   width: 120px; /* Tamaño de la carta */
+   height: 120px;
+   margin: 1rem;
+   position: relative;
+   transition: transform 0.5s ease; /* Suave animación */
+   transform-style: preserve-3d;
+   cursor: pointer;
+   border-radius: 15px; /* Bordes redondeados */
+   box-shadow: 0px 4px 8px rgba(0,0,0,0.2); /* Sombra para dar profundidad */
+   background-color: #ffeb3b; /* Fondo amarillo para que resalten */
+}
+
+.card.active {
+   transform: rotateY(180deg);
+}
+
+.card div {
+   width: 100%;
+   height: 100%;
+   border-radius: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   backface-visibility: hidden;
+   pointer-events: none;
+}
+
+.card .face {
+   background: #f0f8ff;
+   transform: rotateY(180deg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 4rem;
+   color: #009688; /* Color verde vibrante */
+   font-weight: bold;
+}
+
+.card .back {
+   border-radius: 15px;
+   background: url(images/back.png) center / contain no-repeat;
+   background-color: #ffeb3b;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: transform 0.5s ease;
+}
+
+.card .face {
+   background-size: 120px 120px;
+}
+
+.card.matched {
+   box-shadow: 0px 0px 15px rgba(76,175,80,0.7); /* Efecto cuando las cartas coinciden */
+   border: 3px solid #4caf50;
+}
