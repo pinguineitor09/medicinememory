@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
    margin: 0;
    background: #f0f8ff; /* Fondo suave azul claro */
@@ -49,6 +50,7 @@ body {
    padding: 10px;
 }
 
+/* Estilos de las cartas */
 .card {
    width: 120px; /* Tamaño de la carta */
    height: 120px;
@@ -107,5 +109,83 @@ body {
    box-shadow: 0px 0px 15px rgba(76,175,80,0.7); /* Efecto cuando las cartas coinciden */
    border: 3px solid #4caf50;
 }
+
+/* Medios responsivos */
+
+/* Pantallas pequeñas (celulares) */
+@media (max-width: 600px) {
+   #stats {
+      font-size: 1.8rem; /* Reducir tamaño del contador */
+   }
+
+   #resetButton {
+      padding: 8px 16px;
+      font-size: 1rem;
+   }
+
+   #game {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+   }
+
+   .card {
+      width: 80px;
+      height: 80px;
+   }
+
+   .card .face {
+      font-size: 2rem;
+   }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+   #stats {
+      font-size: 2rem;
+   }
+
+   #resetButton {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+   }
+
+   #game {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+   }
+
+   .card {
+      width: 100px;
+      height: 100px;
+   }
+
+   .card .face {
+      font-size: 3rem;
+   }
+}
+
+/* Pantallas grandes (PC) */
+@media (min-width: 1025px) {
+   #stats {
+      font-size: 2.5rem; /* Mantener el tamaño original */
+   }
+
+   #resetButton {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+   }
+
+   #game {
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+   }
+
+   .card {
+      width: 120px;
+      height: 120px;
+   }
+
+   .card .face {
+      font-size: 4rem;
+   }
+}
+
 
 
