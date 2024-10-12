@@ -56,12 +56,13 @@ body {
    max-width: 500px; /* Máximo ancho para no hacer las cartas demasiado grandes en pantallas grandes */
    overflow: auto; /* Permitir el desplazamiento si el contenido excede el tamaño visible */
    margin-top: 10px;
+   justify-items: center; /* Asegurarse que el contenido en la cuadrícula esté centrado */
 }
 
 /* Estilos de las cartas */
 .card {
    width: 100%; /* Ocupa el 100% de la columna */
-   height: 100px;
+   height: 120px; /* Tamaño de las cartas en pantalla grande */
    position: relative;
    transition: transform 0.5s ease;
    transform-style: preserve-3d;
@@ -137,7 +138,7 @@ body {
 
    .card {
       width: 100%; /* Ocupa toda la columna disponible */
-      height: 80px; /* Reducir tamaño de las cartas */
+      height: 100px; /* Reducir tamaño de las cartas */
    }
 
    .card .face {
@@ -198,5 +199,6 @@ body {
       font-size: 4rem;
    }
 }
+
 
 
