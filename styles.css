@@ -132,6 +132,7 @@ body {
       grid-template-columns: repeat(2, 1fr); /* 2 columnas en celulares */
       width: 100%;
       max-width: 400px; /* Hacerlo más pequeño en celulares */
+      margin-top: 20px;
    }
 
    .card {
@@ -197,4 +198,5 @@ body {
       font-size: 4rem;
    }
 }
+
 
