@@ -47,7 +47,7 @@ body {
 #game {
    display: grid;
    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-   gap: 5px; /* Espacio entre cartas */
+   gap: 10px; /* Espacio entre cartas */
    justify-content: center; /* Centrado horizontal */
    align-items: center; /* Centrado vertical */
    padding: 10px;
@@ -58,7 +58,7 @@ body {
 /* Estilos de las cartas */
 .card {
    width: 100%; /* Ocupa el 100% de la columna */
-   height: 120px;
+   height: 100px;
    position: relative;
    transition: transform 0.5s ease;
    transform-style: preserve-3d;
@@ -90,7 +90,7 @@ body {
    display: flex;
    align-items: center;
    justify-content: center;
-   font-size: 4rem;
+   font-size: 3rem;
    color: #009688; /* Color verde vibrante */
    font-weight: bold;
 }
@@ -115,18 +115,20 @@ body {
 /* Pantallas pequeñas (celulares) */
 @media (max-width: 600px) {
    #stats {
-      font-size: 1.8rem; /* Reducir tamaño del contador */
+      font-size: 1.5rem; /* Reducir tamaño del contador */
+      padding: 0.5rem;
    }
 
    #resetButton {
-      padding: 8px 16px;
-      font-size: 1rem;
+      padding: 10px 0;
+      font-size: 1.2rem;
+      max-width: 80%; /* Hacerlo más pequeño en pantallas móviles */
    }
 
    #game {
       grid-template-columns: repeat(2, 1fr); /* 2 columnas en celulares */
       width: 100%;
-      max-width: 400px;
+      max-width: 400px; /* Hacerlo más pequeño en celulares */
    }
 
    .card {
@@ -135,7 +137,11 @@ body {
    }
 
    .card .face {
-      font-size: 2rem; /* Reducir tamaño de la letra */
+      font-size: 2rem; /* Reducir tamaño del texto */
+   }
+
+   #resetButton {
+      width: 100%; /* Asegurarse de que el botón ocupe todo el ancho disponible */
    }
 }
 
