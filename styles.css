@@ -121,6 +121,69 @@ body {
    border: 3px solid #4caf50;
 }
 
+@media (min-width: 1024px) {
+   #game {
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   .card {
+      width: 150px;
+      height: 150px;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+   #game {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .card {
+      width: 130px;
+      height: 130px;
+   }
+}
+
+@media (max-width: 767px) {
+   #game {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .card {
+      width: 100px;
+      height: 100px;
+      margin: 0.5rem;
+   }
+
+   #stats {
+      font-size: 1.8rem;
+   }
+
+   #resetButton {
+      font-size: 1rem;
+      padding: 8px 16px;
+   }
+}
+
+@media (max-width: 480px) {
+   #game {
+      grid-template-columns: 1fr;
+   }
+
+   .card {
+      width: 80px;
+      height: 80px;
+   }
+
+   #stats {
+      font-size: 1.5rem;
+   }
+
+   #resetButton {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+   }
+}
+
 
 
 
