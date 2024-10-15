@@ -1,4 +1,3 @@
-/* Estilos generales para el juego */
 body {
    margin: 0;
    font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -68,7 +67,6 @@ body {
    z-index: 2;
 }
 
-/* Estilo para las cartas */
 .card {
    width: 120px;
    height: 120px;
@@ -123,53 +121,6 @@ body {
    border: 3px solid #4caf50;
 }
 
-/* MEDIA QUERIES PARA RESPONSIVIDAD */
-
-/* Ajustes para pantallas grandes (escritorios y laptops grandes) */
-@media (min-width: 1024px) {
-   #game {
-      grid-template-columns: repeat(4, 1fr);
-   }
-
-   .card {
-      width: 150px;
-      height: 150px;
-   }
-}
-
-/* Ajustes para tablets (pantallas medianas) */
-@media (min-width: 768px) and (max-width: 1023px) {
-   #game {
-      grid-template-columns: repeat(3, 1fr);
-   }
-
-   .card {
-      width: 130px;
-      height: 130px;
-   }
-}
-
-/* Ajustes para pantallas pequeñas (teléfonos) */
-@media (max-width: 767px) {
-   #game {
-      grid-template-columns: repeat(2, 1fr);
-   }
-
-   .card {
-      width: 100px;
-      height: 100px;
-      margin: 0.5rem;
-   }
-
-   #stats {
-      font-size: 1.8rem;
-   }
-
-   #resetButton {
-      font-size: 1rem;
-      padding: 8px 16px;
-   }
-}
 
 
 
