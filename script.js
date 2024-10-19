@@ -91,3 +91,4 @@ document.querySelector('#resetButton').addEventListener('click', resetGame);
 
 initializeGame();
 
+
