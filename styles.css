@@ -131,17 +131,6 @@ body {
   }
 }
 
-@media (orientation: portrait) {
-  #game {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .card {
-    width: 100px;
-    height: 100px;
-  }
-}
-
 @media (min-width: 1024px) {
   #game {
     grid-template-columns: repeat(4, 1fr);
@@ -184,23 +173,4 @@ body {
     padding: 8px 16px;
   }
 }
-
-@media (max-width: 480px) {
-  #game {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    width: 80px;
-    height: 80px;
-  }
-
-  #stats {
-    font-size: 1.5rem;
-  }
-
-  #resetButton {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
 
