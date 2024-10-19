@@ -135,7 +135,7 @@ body {
    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
    #game {
       grid-template-columns: repeat(4, 1fr);
    }
@@ -145,20 +145,38 @@ body {
    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
    #game {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
    }
    .card {
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
    }
+
    #stats {
       font-size: 2rem;
    }
+
    #resetButton {
       font-size: 1rem;
       padding: 8px 16px;
    }
 }
 
+@media (max-width: 480px) {
+   #game {
+      grid-template-columns: repeat(3, 1fr);
+   }
+   .card {
+      width: 70px;
+      height: 70px;
+   }
+   #stats {
+      font-size: 1.8rem;
+   }
+   #resetButton {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+   }
+}
