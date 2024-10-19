@@ -1,93 +1,172 @@
+/* Estilos generales para el juego */
 body {
-  margin: 0;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: linear-gradient(45deg, #ff6b6b, #f7b733, #4caf50, #1e88e5);
-  background-size: 600% 600%;
-  animation: backgroundAnimation 10s ease infinite;
+   margin: 0;
+   font-family: 'Comic Sans MS', cursive, sans-serif;
+   overflow: hidden;
+   background: linear-gradient(45deg, #ff6b6b, #f7b733, #4caf50, #1e88e5);
+   background-size: 600% 600%;
+   animation: backgroundAnimation 10s ease infinite;
 }
 
 @keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
 }
 
 #wrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+   height: 85vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   z-index: 1;
+}
+
+#stats {
+   color: #ff6347;
+   padding: 1rem;
+   text-align: center;
+   width: calc(100% - 2rem);
+   font-size: 2.5rem;
+   font-weight: bold;
+   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   margin-bottom: 10px;
+}
+
+#resetButton {
+   background-color: #4CAF50;
+   color: white;
+   padding: 10px 20px;
+   font-size: 1.2rem;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-bottom: 20px;
+   transition: background-color 0.3s;
+}
+
+#resetButton:hover {
+   background-color: #45a049;
 }
 
 #game {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 5px;
-  width: 90vw;
-  max-width: 600px;
-  height: 90vw;
-  max-height: 600px;
-  padding: 10px;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 5px;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   position: relative;
+   z-index: 2;
 }
 
+/* Estilo para las cartas */
 .card {
-  position: relative;
-  width: 100%;
-  padding-top: 100%; /* Proporción 1:1 para que las cartas siempre sean cuadradas */
-  transition: transform 0.5s ease;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  border-radius: 15px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #ffeb3b;
-}
-
-.card div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backface-visibility: hidden;
-}
-
-.card .face {
-  background: #f0f8ff;
-  transform: rotateY(180deg);
-  font-size: 2rem;
-  color: #009688;
-}
-
-.card .back {
-  background: url(images/back.png) center / contain no-repeat;
-  background-color: #ffeb3b;
+   width: 120px;
+   height: 120px;
+   margin: 1rem;
+   position: relative;
+   transition: transform 0.5s ease;
+   transform-style: preserve-3d;
+   cursor: pointer;
+   border-radius: 15px;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+   background-color: #ffeb3b;
 }
 
 .card.active {
-  transform: rotateY(180deg);
+   transform: rotateY(180deg);
+}
+
+.card div {
+   width: 100%;
+   height: 100%;
+   border-radius: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   backface-visibility: hidden;
+   pointer-events: none;
+}
+
+.card .face {
+   background: #f0f8ff;
+   transform: rotateY(180deg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 4rem;
+   color: #009688;
+   font-weight: bold;
+}
+
+.card .back {
+   border-radius: 15px;
+   background: url(images/back.png) center / contain no-repeat;
+   background-color: #ffeb3b;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .card.matched {
-  box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.7);
-  border: 3px solid #4caf50;
+   box-shadow: 0px 0px 15px rgba(76, 175, 80, 0.7);
+   border: 3px solid #4caf50;
 }
 
-/* Adaptabilidad a pantallas pequeñas */
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+/* Ajustes para pantallas grandes (escritorios y laptops grandes) */
+@media (min-width: 1024px) {
+   #game {
+      grid-template-columns: repeat(4, 1fr);
+   }
+
+   .card {
+      width: 150px;
+      height: 150px;
+   }
+}
+
+/* Ajustes para tablets (pantallas medianas) */
+@media (min-width: 768px) and (max-width: 1023px) {
+   #game {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .card {
+      width: 130px;
+      height: 130px;
+   }
+}
+
+/* Ajustes para pantallas pequeñas (teléfonos) */
 @media (max-width: 767px) {
-  #game {
-    width: 100vw;
-    height: 100vw;
-  }
+   #game {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .card {
+      width: 100px;
+      height: 100px;
+      margin: 0.5rem;
+   }
+
+   #stats {
+      font-size: 1.8rem;
+   }
+
+   #resetButton {
+      font-size: 1rem;
+      padding: 8px 16px;
+   }
 }
