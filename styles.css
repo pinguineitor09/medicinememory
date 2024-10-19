@@ -65,6 +65,8 @@ body {
   align-items: center;
   width: 90vw;
   height: 90vw;
+  max-width: 600px;
+  max-height: 600px;
   padding: 10px;
   position: relative;
   z-index: 2;
@@ -123,9 +125,9 @@ body {
   border: 3px solid #4caf50;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 600px) {
   #game {
-    width: 40vw;
-    height: 40vw;
+    width: 100vw;
+    height: 100vw;
   }
 }
